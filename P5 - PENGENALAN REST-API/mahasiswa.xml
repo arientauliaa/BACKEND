@@ -1,0 +1,11 @@
+<?zml vesion = 1.0 encoding="UTF-8"?><
+    <mahasiswa>
+        <nama>Ghulam</nama>
+        <alamat>Banyuwangi</alamat>
+        <jurusan>Teknik Informatika</jurusan>
+
+        <hobi name = "Blogging"/>
+        <hobi name = "Futsal"/>
+        <hobi name = "Memancing"/>
+
+</mahasiswa>
