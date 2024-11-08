@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Nama Buah : <strong id="hasil"></strong></p>
+<input type="text" placeholder="Masukkan Nama Buah" id="input">
+<button id="submit">Submit</button>
+
+<script>
+    var hasil = document.getElementById('hasil');
+    var submit = document.getElementById('submit');
+
+    submit.onclick = ambilnilai;
+
+    function ambilnilai() {
+        var text = document.getElementById('input').value;
+        hasil.innerHTML = text;
+    }
+</script>
+
+</body>
+</html>
