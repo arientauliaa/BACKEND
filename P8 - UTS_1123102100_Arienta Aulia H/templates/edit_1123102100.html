@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perpustakaan Arin - Ubah Data Buku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #ffffff; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(129, 143, 180, 0.2);
+            margin-top: 20px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-5">
+            <h2>Ubah Data Buku Perpustakaan</h2>
+            <form action="/edit/{{data[0]}}" method="post">
+                <div class="form-group">
+                    <label>Kode Buku:</label>
+                    <input type="number" name="Kode_Buku" value="{{data[0]}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Nama Buku:</label>
+                    <input type="text" name="Nama_Buku" value="{{data[1]}}" class="form-control" placeholder="Masukkan Judul Buku" required />
+                </div>
+                <div class="form-group">
+                    <label>Penerbit:</label>
+                    <input type="text" name="Penerbit" value="{{data[2]}}" class="form-control" placeholder="Masukkan Penerbit" required />
+                </div>
+                <div class "form-group">
+                    <label>Pengarang:</label>
+                    <input type="text" name="Pengarang" value="{{data[3]}}" class="form-control" placeholder="Nama Pengarang" required />
+                </div>
+                <div class="form-group">
+                    <label>Jumlah:</label>
+                    <input type="number" name="Jumlah_Buku" value="{{data[4]}}" class="form-control" placeholder="Masukkan Jumlah Buku" required />
+                </div>
+                <button type="submit" id="submit" name="submit" class="btn btn-primary">Simpan</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

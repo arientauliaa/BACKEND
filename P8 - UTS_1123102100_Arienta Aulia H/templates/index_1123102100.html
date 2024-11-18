@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perpustakaan Arin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    
+    <style>
+        body {
+            background-color: 818FB4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: 818FB4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgb(129, 143, 180);
+            margin-top: 20px;
+        }
+        h2 {
+            color: #007bff;
+            text-align:center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 2px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 5px 10px; 
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            color: #333;
+        }
+        .btn-warning:hover {
+            background-color: #d5a300;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .btn-info {
+            background-color: #17a2b8;
+            color: #fff;
+        }
+        .btn-info:hover {
+            background-color: #138496;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Aplikasi CRUD Perpustakaan Arin</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kode Buku</th>
+                    <th>Nama Buku</th>
+                    <th>Penerbit</th>
+                    <th>Pengarang</th>
+                    <th>Jumlah</th>
+                    <th width="10%" colspan="3">Edit / Hapus</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in container %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td><a href="http://localhost:5000/edit/{{row[0]}}" class="btn btn-warning" role="button">Edit</a></td>
+                    <td><a href="http://localhost:5000/hapus/{{row[0]}}" class="btn btn-danger" role="button">Hapus</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary">
+            <a href="http://localhost:5000/tambah" style="color: #ddd; text-decoration: none;">Tambahkan</a>
+        </button>        
+    </div>
+</body>
+</html>
