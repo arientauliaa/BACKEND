@@ -1,0 +1,185 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #17a2b8;
+}
+
+/* Main Content */
+h1 {
+    font-weight: bold;
+    color: #343a40;
+}
+
+/* ... (previous styles for navbar, header, etc.) ... */
+
+/* Cards for Books */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px; /* Ukuran kartu */
+    margin: 10px; /* Jarak antar kartu */
+    height: 280px; /* Tingkatkan tinggi kartu untuk mengakomodasi gambar yang lebih besar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Menjaga tata letak gambar dan deskripsi */
+}
+
+/* Gambar di bagian atas kartu */
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 150px; /* Tingkatkan tinggi gambar */
+    object-fit: cover; 
+}
+
+/* Container deskripsi */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Agar deskripsi memenuhi ruang kartu */
+    padding: 15px;
+}
+
+/* Judul */
+.card-title {
+    font-size: 1rem; /* Ukuran font */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    white-space: nowrap; /* Mencegah teks panjang meluber */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Deskripsi teks */
+.card-text {
+    font-size: 0.875rem; /* Ukuran teks */
+    color: #555;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Tombol */
+.card .btn {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    align-self: center; /* Pusatkan tombol di bawah */
+}
+
+/* Buttons */
+.card .btn {
+    font-size: 0.875rem; /* Ukuran tombol lebih kecil */
+    padding: 0.25rem 0.75rem;
+}
+
+/* Layout adjustments for books */
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Jarak antar kartu */
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+    background-color: #2a2c2d;
+    border-color: #2a2c2d;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2a2c2d;
+    border-color: #2a2c2d;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+    border-color: #8b1e24;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #c69500;
+}
+
+/* Tables */
+.table {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table img {
+    max-height: 50px;
+    border-radius: 5px;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 5px;
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}

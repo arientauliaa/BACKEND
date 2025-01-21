@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center">Admin Panel</h1>
+<a href="/admin/add" class="btn btn-primary mb-3">Tambah Buku</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Judul</th>
+            <th>Penulis</th>
+            <th>Kategori</th>
+            <th>Gambar</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ book[1] }}</td>
+            <td>{{ book[2] }}</td>
+            <td>{{ book[3] }}</td>
+            <td><img src="{{ url_for('static', filename='uploads/' + book[4].split('/')[-1]) }}" alt="Gambar" width="50"></td>
+            <td>
+                <a href="/admin/edit/{{ book[0] }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/admin/delete/{{ book[0] }}" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus buku ini?')">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

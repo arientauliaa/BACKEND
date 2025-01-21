@@ -1,0 +1,28 @@
+<!-- templates/books_by_category.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Buku dalam Kategori {{ category }}</h1>
+    <div class="row mt-4">
+        {% if books %}
+            {% for book in books %}
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <!-- Gambar dengan ukuran yang lebih besar dan responsif -->
+                    <img src="{{ url_for('static', filename='uploads/' + book[4].split('/')[-1]) }}" alt="Gambar" class="img-fluid" style="max-height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book[1] }}</h5>
+                        <p class="card-text">Penulis: {{ book[2] }}</p>
+                        <p class="card-text"><strong>Stok:</strong> {{ book[5] }}</p>
+                        <a href="{{ url_for('detail', book_id=book[0]) }}" class="btn btn-primary">Detail</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <p class="text-center">Tidak ada buku dalam kategori ini.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

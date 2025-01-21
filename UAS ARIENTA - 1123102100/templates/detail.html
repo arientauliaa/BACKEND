@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="row no-gutters">
+
+        <div class="col-md-4">
+            <!-- Mengatur ukuran gambar agar lebih besar dan responsif -->
+            <img src="{{ url_for('static', filename='uploads/' + book[4].split('/')[-1]) }}" alt="Gambar" class="img-fluid" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{ book[1] }}</h5>
+
+                <p class="card-text"><strong>Penulis:</strong> {{ book[2] }}</p>
+
+                <p class="card-text"><strong>Kategori:</strong> {{ book[3] }}</p>
+
+                <p class="card-text"><strong>Stok:</strong> {{ book[5] }}</p>
+
+                <a href="/" class="btn btn-secondary">Kembali ke Daftar</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

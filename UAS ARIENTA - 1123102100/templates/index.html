@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center">Daftar Buku Perpustakaan</h1>
+<div class="row">
+    {% for book in books %}
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{{ url_for('static', filename='uploads/' + book[4].split('/')[-1]) }}" alt="Gambar Buku">
+            <div class="card-body">
+                <h5 class="card-title">{{ book[1] }}</h5>
+                <p class="card-text"><strong>Penulis:</strong> {{ book[2] }}</p>
+                <p class="card-text"><strong>Kategori:</strong> {{ book[3] }}</p>
+                <a href="{{ url_for('detail', book_id=book[0]) }}" class="btn btn-primary">Lihat Detail</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
